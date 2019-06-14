@@ -1,30 +1,33 @@
-import Home from "./view/home.js";
-import { changeView } from './view-controller/routes.js';
+// Este es el punto de entrada de tu aplicacion
 
-const initRouter = () => {
-  changeView(window.location.hash);
-  window.addEventListener('hashchange', () => changeView(window.location.hash)
-)}
+import { myFunction } from './lib/index.js';
 
+const registrar = () => {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('contraseña').value;
 
-export const initFirebase = () => {
-const config = {
-  apiKey: "AIzaSyB7zvj9po_juhXbLvE4yZtizGDydklpOnA",
-  authDomain: "social-network-2b544.firebaseapp.com",
-  databaseURL: "https://social-network-a964e.firebaseio.com",
-  projectId: "social-network-2b544",
-  storageBucket: "social-network-2b544.appspot.com",
-  messagingSenderId: "40801451226"
-};
-firebase.initializeApp(config);
-};
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
+  }
 
+const ingreso = () => {
+    const email2 = document.getElementById('email2').value;
+    const password2 = document.getElementById('contraseña2').value;
 
-window.addEventListener('load', () => {
-  initFirebase()
-  initRouter()
-  const FatherElement = document.getElementById('father'); 
-  FatherElement.appendChild(Home());
-  
-})
+    firebase.auth().signInWithEmailAndPassword(email2, password2)
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+      // ...
+    }); 
+  }
 
+myFunction();
