@@ -14,7 +14,7 @@ global.firebase = firebasemock.MockFirebaseSdk(
 import { NewUsers, LogGoogle, LogUsers, signOut} from "../src/controller/firebase.js";
 
 describe('Nuevo usuario', () => {
-  it('Debería poder iniciar sesión', () => {
+  it('Debería poder iniciar sesión', (done) => {
     return NewUsers('susana@gmail.com', '123456')
     .then((user) => {
       expect(user.email).toBe('susana@gmail.com')
@@ -23,7 +23,7 @@ describe('Nuevo usuario', () => {
 })
 
 describe('Inicio sesión', () => {
-  it('Debería poder iniciar sesión', () => {
+  it('Debería poder iniciar sesión', (done) => {
     return LogUsers('danieladelcarmen168@hotmail.com', '123456')
     .then((user) => {
       expect(user.email).toBe('danieladelcarmen168@hotmail.com')
@@ -41,19 +41,21 @@ describe('Facebook', () => {
 })
 */
 describe('Google', () => {
-  it('Debería poder iniciar sesion a Google', () => {
+  it('Debería poder iniciar sesion a Google', (done) => {
     return LogGoogle()
       .then((user) => {
         expect(user.isAnonymous).toBe(false)
+        done()
       })
   });
 })
 
 describe('Cerrar sesión', () => {
-  it('Debería cerrar sesion', () => {
+  it('Debería cerrar sesion', (done) => {
     return signOut()
       .then((user) => {
         expect(user).toBe(undefined)
+        done()
       })
   });
 })

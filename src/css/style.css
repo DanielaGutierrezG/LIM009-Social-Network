@@ -159,6 +159,10 @@ header .contenedor {
     align-items: center; 
 }
 
+.principal {
+    justify-content: space-between;
+}
+
 .i {
     flex-direction: column;
 }

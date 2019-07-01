@@ -25,11 +25,11 @@ export const LogFacebook = () => {
 */
 //Agregar post:
 export const dataPost = (content, estado, uid) => {
- return firebase.firestore().collection("notas").add ({
- nota: content,
- estado: estado,
- idUser: uid,
-})
+  return firebase.firestore().collection("notas").add ({
+    nota: content,
+    estado: estado,
+    idUser: uid,
+  })
 }
  
 //Leer documentos   
@@ -38,7 +38,7 @@ export const getPost = (callback) => {
  .onSnapshot((querySnapshot) => {
     const data = [];
     querySnapshot.forEach((doc) => {
-      doc.privacidad === 'publico '
+      doc.privacidad === 'publico'
        data.push({ id: doc.id, ...doc.data() })
     });
     callback(data);
@@ -98,6 +98,6 @@ export const deletePost = (idPost) => {
  }
  
  //observador:
- export const observador = () => {
- return firebase.auth().onAuthStateChanged();
+ export const observador = (cb) => {
+ return firebase.auth().onAuthStateChanged(cb);
  }

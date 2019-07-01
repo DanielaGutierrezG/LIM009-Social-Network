@@ -10,7 +10,7 @@ export const logear = () => {
     changeView('#/perfil')
     })
     .catch( (error)=>  {
-     alert("Ingresa tu email y constraseña");
+     alert(error.message);
     // changeView('');
      var errorCode = error.code;
      var errorMessage = error.message;
@@ -24,9 +24,12 @@ export const register = () => {
   const lastName = document.getElementById('lastName').value;
   const name = document.getElementById('name').value;
   NewUsers(email, password)
-    .then(() => dataBase(name, lastName, email))
-     alert ('registrado')
+    .then(() => {
+      dataBase(name, lastName, email)
+      alert('registrado')
+    })
     .catch( (error)=> {
+      alert(error.message)
       var errorCode = error.code;
       var errorMessage = error.message;
     });

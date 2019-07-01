@@ -3,7 +3,7 @@ import { logear, google } from "../view-controller/promises.js";
 export default ()=>{
     const CreateChildNode = document.createElement("div");
     const Content = 
-    `<div class = "general">
+    `<div class = "general principal">
     <div class = "logo">
     <img src="../images/logo.png" alt=""/>
     </div>

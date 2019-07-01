@@ -20,11 +20,12 @@ export const changeView = (route) => {
      case '#/registrate': father.appendChild(components.home2())
      break;
      case '#/perfil':
-       getPost((data) => {
-         father.innerHTML = '';
-         father.appendChild(components.header(data))
-         father.appendChild(components.body(data))
-       })
+      const callback = (data) => {
+        father.innerHTML = '';
+        father.appendChild(components.header(data))
+        father.appendChild(components.body(data))
+      }
+      getPost(callback)
       
      break;
      default:
