@@ -50,54 +50,54 @@ export const deletePost = (idPost) => {
   return firebase.firestore().collection("notas").doc(idPost).delete()
 }
 
-/* editar notas: */
- export const editarPost = (idPost, nuevo) => {
- return firebase.firestore().collection("notas").doc(idPost).update({
- nota: nuevo,
- })
- }
- 
- export const estadoPost = (idPost, estado) => {
-    return firebase.firestore().collection("notas").doc(idPost).update({
-       estado: estado,
-    })
- }
- //Agregar usuarios:
- export const dataBase = (uid, Nombre, lastName, emailRegister) => {
- return firebase.firestore().collection("users").doc(uid).set({
- idUser: uid,
- Nombre : Nombre,
- Apellido : lastName,
- Email : emailRegister,
- photo: userPhoto,
- });
- }
- 
- export const updateUser = (idUser, name) => {
-    return firebase.firestore().collection('users').doc(idUser).update({
-       name: name,
-    })
- }
- // imprimir usuario:
- export const getUserFirestore = (uid) => {
- return firebase.firestore().collection("users").doc(uid).get();
- }
- 
- //Leer documento usuario:
- export const getUser = (uid, callback) => {
- firebase.firestore().collection("users").doc(uid)
- .onSnapshot(doc => {
- const data = doc.data();
- callback(data)
- });
- }
- 
- //Usuario activo:
- export const usuarioActivo = () => {
- return firebase.auth().currentUser;
- }
- 
- //observador:
- export const observador = (cb) => {
- return firebase.auth().onAuthStateChanged(cb);
- }
+ /* editar notas: */
+  export const editarPost = (idPost, nuevo) => {
+  return firebase.firestore().collection("notas").doc(idPost).update({
+  nota: nuevo,
+  })
+  }
+  
+  export const estadoPost = (idPost, estado) => {
+     return firebase.firestore().collection("notas").doc(idPost).update({
+        estado: estado,
+     })
+  }
+  //Agregar usuarios:
+  export const dataBase = (uid, Nombre, lastName, emailRegister) => {
+  return firebase.firestore().collection("users").doc(uid).set({
+  idUser: uid,
+  Nombre : Nombre,
+  Apellido : lastName,
+  Email : emailRegister,
+  photo: userPhoto,
+  });
+  }
+  
+  export const updateUser = (idUser, name) => {
+     return firebase.firestore().collection('users').doc(idUser).update({
+        name: name,
+     })
+  }
+  // imprimir usuario:
+  export const getUserFirestore = (uid) => {
+  return firebase.firestore().collection("users").doc(uid).get();
+  }
+  
+  //Leer documento usuario:
+  export const getUser = (uid, callback) => {
+  firebase.firestore().collection("users").doc(uid)
+  .onSnapshot(doc => {
+  const data = doc.data();
+  callback(data)
+  });
+  }
+  
+  //Usuario activo:
+  export const usuarioActivo = () => {
+  return firebase.auth().currentUser;
+  }
+  
+  //observador:
+  export const observador = () => {
+  return firebase.auth().onAuthStateChanged();
+}

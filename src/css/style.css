@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    padding: 60px;
+    flex-wrap: wrap;
 }
 
 header {
@@ -110,12 +110,10 @@ header .contenedor {
 }
 
 .painter-user {
-    padding: 85px;
+    padding: 40px;
 }
 
-.wraper {
-    padding: 20px;
-}
+
 
 .caja {
     display: flex;
@@ -146,6 +144,7 @@ header .contenedor {
 
 .general {
     display: flex;
+    padding: 30px;
 }
 
 .logo {
@@ -171,11 +170,46 @@ header .contenedor {
     align-items: center;
 }
 
+[class*="col-"]{
+    float: left;
+}
+
+@media(min-width:1200px){
+    .col-lg-12{width: 100%;}
+    .col-lg-9{width: 75%;}
+    .col-lg-6{width: 50%;}
+    .col-lg-4{width: 33.33333333%;}
+    .col-lg-3{width: 25%;}
+    }
 
 #father {
-    background-image: url("https://previews.123rf.com/images/apostrophe/apostrophe1407/apostrophe140700014/30014770-s%C3%B3lido-textura-de-fondo-verde-en-colores-pastel-luz-de-color-verde-y-se-desvaneci%C3%B3-dise%C3%B1o-antiguo-textura-ape.jpg");
+    background-image: url("https://st2.depositphotos.com/1875497/9597/i/950/depositphotos_95971574-stock-photo-white-wood-textures.jpg");
+    background-repeat: repeat-x;
     height: 100%;
   width: 100%;
   position: absolute;
   left: 0;
+  }
+
+.post-nota {
+    height: 10em;
+    border: 1% solid #1a3f13;
+    text-align: justify; 
+    width: 100%;
+    margin: 4%;
+    border-radius: 3px;
+    text-align: center;
+    padding: 50%;
+  }
+
+  .cabeza {
+      border: 2px solid black;
+  }
+
+  .general .perfil {
+      border: 2px solid black;
+  }
+
+  .crud {
+    flex-direction: row;
   }

@@ -3,12 +3,12 @@ import { register } from "../view-controller/promises.js";
 export default ()=>{
     const CreateChildNode = document.createElement("div");
     const Content = `
-    <div class ="general">
-    <div class ="logo">
+    <div class = "col-lg-12 general principal">
+    <div class ="col-lg-6 logo">
     <img src="../images/logo.png" alt=""/>
     </div>
-    <div class = "intro">
-    <h2>¡Empecemos con tu registro!</h2>
+    <div class = "col-lg-6 intro general">
+    <h2>¡Empecemos con tu registro!</h2></br>
     <input class ="input" id="name" type="text" placeholder="Nombre"/> </br>
     <input class ="input" id="lastName" type="text" placeholder="Apellido"/> </br>
     <input class ="input" id="emailRegister" type="text" placeholder="Email"/> </br>

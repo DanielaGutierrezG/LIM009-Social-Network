@@ -1,7 +1,5 @@
 import {  init} from './view-controller/routes.js';
 
-
-
 export const initFirebase = () => {
 const config = {
   apiKey: "AIzaSyB7zvj9po_juhXbLvE4yZtizGDydklpOnA",
@@ -14,10 +12,8 @@ const config = {
 firebase.initializeApp(config);
 };
 
-
 window.addEventListener('load', () => {
   initFirebase()
-
   init()
  
  /*  const FatherElement = document.getElementById('father'); 

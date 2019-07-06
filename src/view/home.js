@@ -3,13 +3,13 @@ import { logear, google } from "../view-controller/promises.js";
 export default ()=>{
     const CreateChildNode = document.createElement("div");
     const Content = 
-    `<div class = "general principal">
-    <div class = "logo">
+    `<div class = "col-lg-12 general principal">
+    <div class = "col-lg-6 logo">
     <img src="../images/logo.png" alt=""/>
     </div>
-    <div class = "intro general">
-    <img src="../images/titulo.PNG" alt=""/>
-    <h2> Bienvenida! </h2>
+    <div class = "col-lg-6 intro general">
+    <img src="../images/patas.jpeg" alt=""/></br>
+    <h2> Bienvenida! </h2></br>
     <input class ="input" id="emailLogin" type="text" placeholder="Email"/> </br>
     <input class="input" id="contraseñaLogin" type="password" placeholder="Password"/> </br>
     <button class ="botonInicio" id="btnLogin">Log in</button>
